@@ -1,72 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
-*{
-    font-family: 'Poppins',cursive;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    color: azure;
-    width: 100%;
-    height: 100vh;
+
+body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background: linear-gradient(45deg, #000000, #1a1a1a);
+    font-family: 'Dancing Script', cursive;
+    gap: 2rem;
 }
-.greetings{
-    font-size: 6rem;
-    font-weight: 900;
+
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
-.greetings > span{
-    animation: glow 2.5s ease-in-out infinite;
+
+.line {
+    display: flex;
+    gap: 0.5rem;
 }
-@keyframes glow{
-    0%, 100%{
-        color: #fff;
-        text-shadow: 0 0 12px #fbff00, 0 0 50px #fbff00, 0 0 100px #fbff00;
+
+.line span {
+    font-size: 4rem;
+    color: transparent;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+    animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        filter: brightness(100%) drop-shadow(0 0 15px rgba(255, 105, 180, 0.5));
     }
-    10%, 90%{
-        color: #696565;
-        text-shadow: none;
+    50% {
+        filter: brightness(150%) drop-shadow(0 0 25px rgba(255, 105, 180, 0.8));
     }
 }
-.greetings > span:nth-child(2){
-    animation-delay: .2s ;
+
+.button button {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
 }
-.greetings > span:nth-child(3){
-    animation-delay: .4s ;
+
+.button button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.8);
 }
-.greetings > span:nth-child(4){
-    animation-delay: .6s;
+
+.button a {
+    text-decoration: none;
+    color: white;
 }
-.greetings > span:nth-child(5){
-    animation-delay: .8s;
+
+@media (max-width: 600px) {
+    .line span {
+        font-size: 2.5rem;
+    }
+    
+    .button button {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.6rem;
+    }
 }
 
 .description{
     font-size: 1.5rem;
     margin-bottom: 20px;
-}
-
-.button a{
-    text-decoration: none;
-    font-size: 1rem;
-    color: #111;
-}
-
-@media screen and (max-width:574px){
-    .greetings{
-        display: block;
-        font-size: 3rem;
-        font-weight: 500;
-        text-align: center;
-    }
-    .description{
-        font-size: 1rem;
-    }
-    
-    .button a{
-        font-size: .5rem;
-    }
 }
 
 .description{
