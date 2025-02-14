@@ -67,7 +67,7 @@ body {
 
 .button a {
     text-decoration: none;
-    color: white;
+    color: #000000;
 }
 
 @media (max-width: 600px) {
